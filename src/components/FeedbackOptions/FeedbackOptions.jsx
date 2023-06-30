@@ -1,25 +1,38 @@
+import React, { Component } from 'react';
 import  PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
+import { nanoid } from 'nanoid';
                  
- 
-export const FeedbackOptions = (onLeaveFeedbeck, options) => {
-    return (
-        <div className={CSS.buttonsWrap}>
-            {options.map(option => (
-                <button 
-                        key={option} 
-                        className={CSS.button} 
-                        onClick={() => onLeaveFeedbeck(option)}   
-                 >
-                    {option}
-                </button>
-            ))}
-        </div>
-    );
-};
+    export default class FeedbackOptions extends Component {
+        render () {
+            return (
+                <ul className={css.buttonsFeedback}>
+                    {this.props.options.map((item) => (
+                        <li key={nanoid()}>
+                            <button className={`${css.btn} ${this.getButtonClass(item)}`} type="button" onClick={() => this.props.onLeaveFeedback(item)}>{item}</button>
+                        </li>
+                    ))}
+                </ul>
+            );
+        };
+
+        getButtonClass = (item) => {
+            switch(item) {
+                case 'good':
+                    return css.btnGood;
+                case 'neutral':
+                    return  css.btnNeytral;
+                case 'bad':
+                    return css.btnBad;
+                    default:
+                        return '';
+            }
+        }
+        };
+
+
 
 
 FeedbackOptions.propTypes = {
-    onLeaveFeedbeck: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad'])).isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
