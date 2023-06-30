@@ -1,11 +1,15 @@
-.buttonsWrap {
+.buttonsFeedback {
+    list-style: none;
     display: flex;
     gap: 10px;
-    flex-direction: row;
-};
+}
 
-.button {
-    border-radius: 5px;
+.btn {
     width: 100px;
-    height: 30px;
+    height: 40px;
+    background-color: white;
+    border-color: gainsboro;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
 }
