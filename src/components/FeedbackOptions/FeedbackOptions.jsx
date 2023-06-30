@@ -20,7 +20,6 @@ export const FeedbackOptions = (onLeaveFeedbeck, options) => {
 
 
 FeedbackOptions.propTypes = {
-    onLeaveFeedbeck: PropTypes.func.isRequired,
-    options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad']))
-    .isRequired,
+    onLeaveFeedbeck: PropTypes.func,
+    options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad'])).isRequired,
 };
