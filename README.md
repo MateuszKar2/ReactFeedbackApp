@@ -1,4 +1,4 @@
-# ReactFeedbackApp
+ # ReactFeedbackApp
 
 **ReactFeedbackApp** is a simple React project that allows users to provide feedback through various options such as thumbs up or down. It helps you learn how to build interactive React applications and manage state effectively.
 
